@@ -17,7 +17,7 @@ interface ButtonProps extends PropsWithChildren, UISize, UIActionnable, UILevel 
 const Button: FC<ButtonProps> = (props) => {
 
    return(
-   <ButtonWrapper data-testid="Button" {...props} />
+   <ButtonWrapper data-testid="Button" {...props} onClick={props.action}/>
    );
 
 }
@@ -33,7 +33,7 @@ const ButtonMemo = React.memo(Button, (prevProps, nextProps) => {
    return true if props are equal
    return false if props are not equal
    */
-   console.log(prevProps, nextProps)
+   //console.log(prevProps, nextProps)
    return false;
 });
 ButtonMemo.displayName = 'Button Memoized';

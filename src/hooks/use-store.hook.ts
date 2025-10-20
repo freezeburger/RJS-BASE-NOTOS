@@ -2,12 +2,12 @@ import { store } from "@/store";
 import { useEffect, useState } from "react";
 
 export const useStore = () => {
-  /* const [ data , setData] = useState(store.get());
+  const [ data , setData] = useState(store.getState());
 
   useEffect(() => {
-    const unsubscribe = store.subscribe(setData);
+    const unsubscribe = store.subscribe(() => setData(store.getState()));
     return unsubscribe;
   }, []);
 
-  return { data, act: store.act.bind(store) }; */
+  return { data, dispatch: store.dispatch.bind(store) }; 
 } 

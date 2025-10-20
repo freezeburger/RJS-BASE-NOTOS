@@ -1,5 +1,5 @@
 /* Global Imports */
-import  { FC } from 'react';
+import  { FC, useEffect } from 'react';
 
 /* Application Level Imports */
 import * as UI from '@/components';
@@ -15,6 +15,12 @@ interface HomeProps {}
 const Home: FC<HomeProps> = () => {
 
    Hooks.useDocumentTitle('Home View');
+
+   const  {data, dispatch} = Hooks.useStore();
+
+   console.log(data)
+
+   useEffect( () => { dispatch({type:'TEST'}) } ,[])
 
    return (
    <div className="Home" data-testid="Home">
