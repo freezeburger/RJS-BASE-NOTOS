@@ -8,6 +8,7 @@ import * as Hooks from '@/hooks';
 
 /* Local Imports */
 import './Home.style.css';
+import { AppAction } from '@/store/store';
 
 
 interface HomeProps {}
@@ -20,7 +21,7 @@ const Home: FC<HomeProps> = () => {
 
    console.log(data)
 
-   useEffect( () => { dispatch({type:'TEST'}) } ,[])
+   useEffect( () => { dispatch({type:AppAction.PRODUCT_LIST_REQUEST}) } ,[])
 
    return (
    <div className="Home" data-testid="Home">
